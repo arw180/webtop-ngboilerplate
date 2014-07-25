@@ -318,6 +318,7 @@ module.exports = function ( grunt ) {
           'beforeEach': false,
           'inject': false,
           'it': false,
+          'xit': false,
           'expect': false,
           'jasmine': false,
           '$scope': false
