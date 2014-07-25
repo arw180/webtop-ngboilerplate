@@ -16,21 +16,23 @@ angular.module('ozpWebtopApp.dashboardView')
  * @class gridsterItem
  * @constructor
  */
-.directive('ozpGridsterItem', function ($compile, $http, compareUrl) {
+.directive('ozpGridsterItem', function ($compile, $http, $templateCache, compareUrl) {
 
-  var getTemplate = function (sameOrigin) {
-    var template = '';
-
-    // If different origin, use an iframe template
-    if (!sameOrigin) {
-      template = 'templates/managediframe.html';
-    }
-    // otherwise, use a 'frame' (div) template
-    else {
-      template = 'templates/managedframe.html';
-    }
-    return template;
-  };
+//  var getTemplate = function (sameOrigin) {
+//    var template = '';
+//
+//    // If different origin, use an iframe template
+//    if (!sameOrigin) {
+//      template = 'general/templates/managediframe.tpl.html';
+//      // template = $templateCache.get('general/templates/managediframe.tpl.html');
+//    }
+//    // otherwise, use a 'frame' (div) template
+//    else {
+//      template = 'general/templates/managedframe.tpl.html';
+//      // template = $templateCache.get('general/templates/managedframe.tpl.html');
+//    }
+//    return template;
+//  };
 
   return {
 
@@ -49,14 +51,24 @@ angular.module('ozpWebtopApp.dashboardView')
 
       // Is the origin the same as the webtop?
       var origin = compareUrl(scope.frame.url);
+      var template;
 
       // Instead of templateUrl, use $http to load one of two templates
-      $http.get(getTemplate(origin)).then(function(response) {
-        element.html($compile(response.data)(scope));
+      if (origin === true) {
+        template = $templateCache.get('general/templates/managedframe.tpl.html');
+      } else {
+        template = $templateCache.get('general/templates/managediframe.tpl.html');
+      }
+
+      element.html($compile(template)(scope));
+      // Add the managed frame class to take advantage of the styles
+      element.addClass('ozp-managed-frame');
+//      $http.get(getTemplate(origin)).then(function(response) {
+//        element.html($compile(response.data)(scope));
 
         // Add the managed frame class to take advantage of the styles
-        element.addClass('ozp-managed-frame');
-      });
+        // element.addClass('ozp-managed-frame');
+    //});
 
       // TODO: make these dynamic
       scope.styles = {
