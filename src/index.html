@@ -35,8 +35,9 @@
     <script type="text/javascript" src="<%= file %>"></script><% }); %>
 
   </head>
-  <!-- <body ng-app="ozpWebtopApp" ozp-classification="U"> -->
-  <body ng-app="ozpWebtopApp">
+  <body ng-app="ozpWebtopApp" ozp-classification="U">
+
+  <p> I won't be here!!!</p>
 
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser.
@@ -47,7 +48,7 @@
     <!-- <ozp-toolbar location="top" class="ozp-toolbar-top"></ozp-toolbar> -->
 
     <!-- View is used as the 'workspace' -->
-    <div ng-view=""></div>
+    <div ui-view=""></div>
 
     <!-- <ozp-toolbar location="bottom" class="ozp-toolbar-bottom"></ozp-toolbar> -->
 

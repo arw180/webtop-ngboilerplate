@@ -1,4 +1,15 @@
 'use strict';
+/**
+ * Changelog (changes from released version)
+ *
+ * - modification to jshint linting configuration
+ * - removed vendor_files.css from index.build.src and index.compile.src, due
+ *    to this issue: https://github.com/ngbp/ngbp/issues/57
+ * - added cssmin to do css compression instead of using less plugin. had issue
+ *    where the compile task would wipe out vendor css from the concat'ed file.
+ *    Removed the entire less:compile task/target.
+ */
+
 
 module.exports = function ( grunt ) {
 
@@ -20,6 +31,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-html2js');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   /**
    * Load in our build configuration file.
@@ -249,15 +261,16 @@ module.exports = function ( grunt ) {
         files: {
           '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
         }
-      },
-      compile: {
-        files: {
-          '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css': '<%= app_files.less %>'
-        },
-        options: {
-          cleancss: true,
-          compress: true
-        }
+      }
+    },
+
+    /**
+     * cssmin compresses css files
+     */
+    cssmin: {
+      css: {
+        src: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css',
+        dest: '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
       }
     },
 
@@ -394,7 +407,7 @@ module.exports = function ( grunt ) {
           '<%= build_dir %>/src/**/*.js',
           '<%= html2js.common.dest %>',
           '<%= html2js.app.dest %>',
-          '<%= vendor_files.css %>',
+          //'<%= vendor_files.css %>', // ARW
           '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       },
@@ -408,7 +421,7 @@ module.exports = function ( grunt ) {
         dir: '<%= compile_dir %>',
         src: [
           '<%= concat.compile_js.dest %>',
-          '<%= vendor_files.css %>',
+         // '<%= vendor_files.css %>', // ARW
           '<%= build_dir %>/assets/<%= pkg.name %>-<%= pkg.version %>.css'
         ]
       }
@@ -611,7 +624,8 @@ module.exports = function ( grunt ) {
    * The `compile` task gets your app ready for deployment by concatenating and
    * minifying your code.
    *
-   * - compile less file (src/less/main.less) into css in file (same as less:build task)
+   * - compress/minify the concatenated css file
+   *  (same as less:build task, but with css compression and minification)
    * - copy build_dir/assets to compile_dir/assets
    * - run ngmin (pre-minification for AngularJS) - https://github.com/btford/ngmin
    *    Runs over all JS files in src/ other than tests and assets and puts them
@@ -622,7 +636,7 @@ module.exports = function ( grunt ) {
    *    vendor css (in build.config.js), and build_dir/assets/<pkg.name>-<pkg.version>.css
    */
   grunt.registerTask( 'compile', [
-    'less:compile', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+    'cssmin', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
   ]);
 
   /**
