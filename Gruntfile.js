@@ -319,7 +319,8 @@ module.exports = function ( grunt ) {
           'inject': false,
           'it': false,
           'expect': false,
-          'jasmine': false
+          'jasmine': false,
+          '$scope': false
         }
       }
     },

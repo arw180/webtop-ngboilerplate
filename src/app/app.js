@@ -3,7 +3,10 @@
 angular.module( 'ozpWebtopApp', [
   'templates-app',
   'templates-common',
+  'ozpWebtopApp.general',
+  'ozpwebtop.dashboardToolbar',
   'ui.router',
+  'ui.bootstrap',
   'ozpClassification'
 ])
 
@@ -35,5 +38,6 @@ angular.module( 'ozpWebtopApp', [
 });
 
 
-
+angular.module('ozpWebtopApp.general', []);
+angular.module('ozpWebtopApp.dashboardToolbar', []);
 
