@@ -11,7 +11,7 @@ angular.module('ozpWebtopApp.general')
 .directive('ozpIcon', function () {
   return {
     replace: true,
-    templateUrl: 'templates/ozpicon.html',
+    templateUrl: 'general/templates/ozpicon.tpl.html',
     restrict: 'E',
     // Controller is a placeholder, this may need to be removed/refactored...
     controller: function ($scope) {

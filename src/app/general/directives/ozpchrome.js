@@ -3,7 +3,7 @@
 angular.module('ozpWebtopApp')
 .directive('ozpChrome', function () {
   return {
-    templateUrl: 'templates/ozpchrome.html',
+    templateUrl: 'general/templates/ozpchrome.tpl.html',
     restrict: 'E',
     replace: true
   };

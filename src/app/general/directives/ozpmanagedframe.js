@@ -22,11 +22,11 @@ angular.module('ozpWebtopApp.general')
 
     // If different origin, use an iframe template
     if (!sameOrigin) {
-      template = 'templates/managediframe.html';
+      template = 'general/templates/managediframe.tpl.html';
     }
     // otherwise, use a 'frame' (div) template
     else {
-      template = 'templates/managedframe.html';
+      template = 'general/templates/managedframe.tpl.html';
     }
     return template;
   };
