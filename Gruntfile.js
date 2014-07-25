@@ -32,6 +32,7 @@ module.exports = function ( grunt ) {
   grunt.loadNpmTasks('grunt-ngmin');
   grunt.loadNpmTasks('grunt-html2js');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   /**
    * Load in our build configuration file.
@@ -373,6 +374,51 @@ module.exports = function ( grunt ) {
         dest: '<%= build_dir %>/templates-common.js'
       }
     },
+    // Grunt server setup
+    connect: {
+      options: {
+        port: 9000,
+        // Change this to '0.0.0.0' to access the server from outside.
+        hostname: 'localhost'
+        // livereload: 35729
+      },
+//      livereload: {
+//        options: {
+//          open: true,
+//          base: [
+//            '.tmp',
+//            '<%= yeoman.app %>'
+//          ]
+//        }
+//      },
+      test: {
+        options: {
+          port: 9001,
+          base: [
+            '<%= build_dir %>'
+          ]
+        }
+      },
+      dist: {
+        options: {
+          base: '<%= compile_dir %>'
+        }
+      },
+      // Demo Apps server
+      demoApps: {
+        options: {
+          port: 9005,
+          base: './demoApps/bouncingBalls'
+        }
+      },
+      // Examples server
+      examples: {
+        options: {
+          port: 9006,
+          base: './demoApps/simpleApps'
+        }
+      }
+    },
 
     /**
      * The Karma configurations.
@@ -612,6 +658,7 @@ module.exports = function ( grunt ) {
    * - compile the karma configuration file (we use grunt templates so we don't
    *    have to modify the file when adding new tests). The compiled configuration
    *    is copied to build_dir/karma-unit.js
+   * - start web server using connect:test task
    * - use karma to run all tests in 'singleRun' mode, which will launch the
    *    specified browser(s), run the tests, and close the browser(s)
    */
