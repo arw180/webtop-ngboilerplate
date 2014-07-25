@@ -110,7 +110,9 @@ h2 {
     }
   }
 }
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+//                        dashboard navigation bar
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 .navbar-right li {
   margin-left: 20px;
 }
@@ -118,6 +120,27 @@ h2 {
 .iconWhite {
   color: white;
 }
+
+// bring back vertical dividers in bootstrap 3.0
+// http://stackoverflow.com/questions/19203816/vertical-divider-wont-work-in-bootstrap-3-0
+.navbar .divider-vertical {
+height: 50px;
+margin: 0 9px;
+border-right: 1px solid #ffffff;
+border-left: 1px solid #f2f2f2;
+}
+
+.navbar-inverse .divider-vertical {
+border-right-color: #222222;
+border-left-color: #111111;
+}
+
+@media (max-width: 767px) {
+.navbar-collapse .nav > .divider-vertical {
+    display: none;
+  }
+}
+
 
 /**
  * Now that all app-wide styles have been applied, we can load the styles for
