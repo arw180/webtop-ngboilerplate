@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Changelog (changes from released version)
+ * Changelog (changes from master branch https://github.com/ngbp/ngbp)
  *
  * - modification to jshint linting configuration
  * - removed vendor_files.css from index.build.src and index.compile.src, due
