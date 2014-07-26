@@ -69,10 +69,12 @@ module.exports = {
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/ozp-classification/jquery.classification.js',
-      'vendor/ozp-classification/ozp-classification.js'
+      'vendor/ozp-classification/ozp-classification.js',
+      'vendor/angular-gridster/dist/angular-gridster.min.js'
     ],
     css: [
-      'vendor/ozp-classification/classification.css'
+      'vendor/ozp-classification/classification.css',
+      'vendor/angular-gridster/dist/angular-gridster.min.css'
     ],
     assets: [
     ]

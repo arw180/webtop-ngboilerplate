@@ -8,6 +8,9 @@
  * - added cssmin to do css compression instead of using less plugin. had issue
  *    where the compile task would wipe out vendor css from the concat'ed file.
  *    Removed the entire less:compile task/target.
+ * - added grunt-contrib-connect to support (manually) serving the app via
+ *    grunt connect:test:keepalive (or similar)
+ * - added 'serve' task using grunt connect
  */
 
 
@@ -379,22 +382,24 @@ module.exports = function ( grunt ) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost'
-        // livereload: 35729
+        hostname: 'localhost',
+        livereload: 35729
       },
-//      livereload: {
-//        options: {
-//          open: true,
-//          base: [
-//            '.tmp',
-//            '<%= yeoman.app %>'
-//          ]
-//        }
-//      },
+      livereload: {
+        options: {
+          open: true,
+          base: [
+            '.tmp',
+            '<%= build_dir %>/assets/mock',
+            '<%= build_dir %>'
+          ]
+        }
+      },
       test: {
         options: {
           port: 9001,
           base: [
+            '<%= build_dir %>/assets/mock',
             '<%= build_dir %>'
           ]
         }
@@ -658,7 +663,6 @@ module.exports = function ( grunt ) {
    * - compile the karma configuration file (we use grunt templates so we don't
    *    have to modify the file when adding new tests). The compiled configuration
    *    is copied to build_dir/karma-unit.js
-   * - start web server using connect:test task
    * - use karma to run all tests in 'singleRun' mode, which will launch the
    *    specified browser(s), run the tests, and close the browser(s)
    */
@@ -686,6 +690,11 @@ module.exports = function ( grunt ) {
    */
   grunt.registerTask( 'compile', [
     'cssmin', 'copy:compile_assets', 'ngmin', 'concat:compile_js', 'uglify', 'index:compile'
+  ]);
+
+  grunt.registerTask('serve', [
+    'build', 'connect:livereload', 'connect:demoApps', 'connect:examples',
+    'watch'
   ]);
 
   /**

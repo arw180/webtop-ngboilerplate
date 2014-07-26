@@ -18,6 +18,7 @@ angular.module('ozpWebtopApp.dashboardView')
  */
 .directive('ozpGridsterItem', function ($compile, $http, $templateCache, compareUrl) {
 
+    // TODO: review this before removing
 //  var getTemplate = function (sameOrigin) {
 //    var template = '';
 //
@@ -63,6 +64,7 @@ angular.module('ozpWebtopApp.dashboardView')
       element.html($compile(template)(scope));
       // Add the managed frame class to take advantage of the styles
       element.addClass('ozp-managed-frame');
+      // TODO: review this before removing
 //      $http.get(getTemplate(origin)).then(function(response) {
 //        element.html($compile(response.data)(scope));
 
