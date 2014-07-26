@@ -20,7 +20,7 @@ angular.module('ozpWebtopApp.dashboardView')
     sizeX: 'item.sizex',
     sizeY: 'item.sizey',
     row: 'item.row',
-    col: 'item.row'
+    col: 'item.col'
   };
 
   $scope.gridOptions =  {

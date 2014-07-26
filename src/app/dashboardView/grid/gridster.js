@@ -25,12 +25,10 @@ angular.module('ozpWebtopApp.dashboardView')
 //    // If different origin, use an iframe template
 //    if (!sameOrigin) {
 //      template = 'general/templates/managediframe.tpl.html';
-//      // template = $templateCache.get('general/templates/managediframe.tpl.html');
 //    }
 //    // otherwise, use a 'frame' (div) template
 //    else {
 //      template = 'general/templates/managedframe.tpl.html';
-//      // template = $templateCache.get('general/templates/managedframe.tpl.html');
 //    }
 //    return template;
 //  };

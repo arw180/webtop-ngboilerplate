@@ -9,6 +9,7 @@ angular.module( 'ozpWebtopApp', [
   'ozpWebtopApp.dashboardView',
   'ui.router',
   'ui.bootstrap',
+  'gridster',
   'ozpClassification'
 ])
 

@@ -63,17 +63,21 @@ module.exports = {
   vendor_files: {
     js: [
       'vendor/jquery/dist/jquery.js',
+      'vendor/jquery-ui/jquery-ui.min.js',
       'vendor/angular/angular.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
       'vendor/angular-ui-router/release/angular-ui-router.js',
       'vendor/angular-ui-utils/modules/route/route.js',
+      'vendor/angular-gridster/dist/angular-gridster.min.js',
+      'vendor/javascript-detect-element-resize/detect-element-resize.js',
       'vendor/ozp-classification/jquery.classification.js',
-      'vendor/ozp-classification/ozp-classification.js',
-      'vendor/angular-gridster/dist/angular-gridster.min.js'
+      'vendor/ozp-classification/ozp-classification.js' // WARNING: things after ozp-classification are not being included!!!!
     ],
     css: [
       'vendor/ozp-classification/classification.css',
+      'vendor/jquery-ui/themes/ui-darkness/jquery-ui.min.css',
+      'vendor/jquery-ui/themes/ui-darkness/theme.css',
       'vendor/angular-gridster/dist/angular-gridster.min.css'
     ],
     assets: [
