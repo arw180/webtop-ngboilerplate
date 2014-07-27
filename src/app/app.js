@@ -20,6 +20,11 @@ angular.module( 'ozpWebtopApp', [
       url: '/grid',
       templateUrl: 'dashboardView/grid/grid.tpl.html',
       controller: 'GridController'
+    })
+    .state('desktop', {
+      url: '/desktop',
+      templateUrl: 'dashboardView/desktop/desktop.tpl.html',
+      controller: 'DesktopController'
     });
 
     $urlRouterProvider.otherwise('/grid');

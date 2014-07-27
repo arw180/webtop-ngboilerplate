@@ -13,7 +13,7 @@
       "sizex": 1,
       "windowState": "normal",
       "name": "Red Ball",
-      "icon": "assets/mock/img//UserFolder.png"
+      "icon": "img/UserFolder.png"
     },
     {
       "frameId": "5t4r3e2w",
@@ -28,7 +28,7 @@
       "sizex": 1,
       "windowState": "normal",
       "name": "Blue Ball",
-      "icon": "assets/mock/img/maps.png"
+      "icon": "img/maps.png"
     },
     {
       "frameId": "4y5u6i7o",
@@ -43,7 +43,7 @@
       "sizex": 1,
       "windowState": "normal",
       "name": "Black Ball",
-      "icon": "assets/mock/img/Network-icon.png"
+      "icon": "img/Network-icon.png"
     },
     {
       "frameId": "1q2w3e4r",
@@ -58,7 +58,7 @@
       "sizex": 1,
       "windowState": "normal",
       "name": "Green Ball",
-      "icon": "assets/mock/img/MusicFolder.png"
+      "icon": "img/MusicFolder.png"
     }
   ]
 }

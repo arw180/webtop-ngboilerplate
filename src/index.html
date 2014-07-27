@@ -39,8 +39,6 @@
 
   <div ng-include="'dashboardToolbar/dashboardToolbar.tpl.html'"></div>
 
-  <p> I won't be here!!!</p>
-
     <!--[if lt IE 7]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser.
       Please <a href="http://browsehappy.com/">upgrade your browser</a> to
@@ -50,7 +48,7 @@
     <div ng-include="'appToolbar/appToolbar.tpl.html'"></div>
 
     <!-- View is used as the 'workspace' -->
-    <div ui-view=""></div>
+    <div class="ui-view-style" ui-view=""></div>
 
 
     <!-- TODO: handle this nicer - should come from gruntfile, not be hard coded -->

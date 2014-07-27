@@ -34,7 +34,7 @@ angular.module('ozpWebtopApp.dashboardView')
     isMobile: false, // stacks the grid items if true
     minColumns: 1, // the minimum columns the grid must have
     minRows: 2, // the minimum height of the grid, in rows
-    maxRows: 100,
+    maxRows: 10,
     resizable: {
       enabled: true,
       handles: 'n, e, s, w, ne, se, sw, nw',

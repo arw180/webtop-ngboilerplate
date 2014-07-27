@@ -4,7 +4,7 @@
       "frameId": "q1w2e3r4",
       "index": 0,
       "zIndex": 1,
-      "url": "http://127.0.0.1:9000/examples/square.html",
+      "url": "http://127.0.0.1:9006/square/square.html",
       "registryUrl": "#",
       "version": "1.2.3",
       "size": {
@@ -15,13 +15,13 @@
       },
       "windowState": "normal",
       "name": "Square",
-      "icon": "images/UserFolder.png"
+      "icon": "img/UserFolder.png"
     },
     {
       "frameId": "5t4r3e2w",
       "index": 1,
       "zIndex": 1,
-      "url": "http://127.0.0.1:9006/circle.html",
+      "url": "http://127.0.0.1:9006/circle/circle.html",
       "registryUrl": "#",
       "version": "1.2.3",
       "size": {
@@ -32,13 +32,13 @@
       },
       "windowState": "normal",
       "name": "Circle",
-      "icon": "images/maps.png"
+      "icon": "img/maps.png"
     },
     {
       "frameId": "4y5u6i7o",
       "index": 2,
       "zIndex": 1,
-      "url": "http://127.0.0.1:9006/text.html",
+      "url": "http://127.0.0.1:9006/text/text.html",
       "registryUrl": "#",
       "version": "1.2.3",
       "size": {
@@ -49,13 +49,13 @@
       },
       "windowState": "normal",
       "name": "Text",
-      "icon": "images/Network-icon.png"
+      "icon": "img/Network-icon.png"
     },
     {
       "frameId": "1q2w3e4r",
       "index": 3,
       "zIndex": 2,
-      "url": "http://127.0.0.1:9006/mbrot.html",
+      "url": "http://127.0.0.1:9006/mbrot/mbrot.html",
       "registryUrl": "#",
       "version": "1.2.3",
       "size": {
@@ -66,7 +66,7 @@
       },
       "windowState": "normal",
       "name": "Mbrot",
-      "icon": "images/MusicFolder.png"
+      "icon": "img/MusicFolder.png"
     }
   ]
 }
